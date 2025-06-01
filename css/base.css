@@ -73,10 +73,51 @@ body {
 nav .container-fluid {
 	background-color: lightgray;
 	height: 50px;
+	margin: 0;
+	padding: 0;
 }
 
 .navbar-brand {
 	font-size: max(2.3vw, 25px);
 	font-weight: bold;
 	color: #333;
+	margin: 0 2px;
+}
+
+#navbarSupportedContent {
+	background-color: lightgray;
+	margin: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] {
+	outline: none;
+	box-shadow: none;
+	border: 2px solid orange;
+}
+.navbar-toggler[aria-expanded="false"] {
+	outline: none;
+	box-shadow: none;
+}
+
+.nav-item {
+	font-size: 20px;
+	margin: 5px 0;
+}
+
+/* 検索欄の大きさと文字サイズ */
+form.d-flex .form-control {
+	font-size: 20x; /* 入力文字サイズ */
+	padding: 12px 16px; /* 高さを出す */
+	height: auto;
+}
+
+/* placeholder の文字サイズ */
+form.d-flex .form-control::placeholder {
+	font-size: 20px;
+}
+
+/* 検索ボタンのサイズと文字 */
+form.d-flex .btn {
+	font-size: 20px; /* ボタンの文字サイズ */
+	padding: 12px 20px; /* 高さ・幅を調整 */
 }
