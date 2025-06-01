@@ -70,6 +70,13 @@ body {
 	box-sizing: border-box;
 }
 
-nav {
+nav .container-fluid {
 	background-color: lightgray;
+	height: 50px;
+}
+
+.navbar-brand {
+	font-size: max(2.3vw, 25px);
+	font-weight: bold;
+	color: #333;
 }
