@@ -69,3 +69,7 @@ body {
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+nav {
+	background-color: lightgray;
+}
