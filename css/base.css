@@ -72,11 +72,15 @@ body {
 
 nav .container-fluid {
 	background-color: lightgray;
-	height: 50px;
 	margin: 0;
 	padding: 0;
 }
 
+@media (min-width: 768px) {
+	nav .container-fluid {
+		padding: 0 45px;
+	}
+}
 .navbar-brand {
 	font-size: max(2.3vw, 25px);
 	font-weight: bold;
@@ -100,24 +104,6 @@ nav .container-fluid {
 }
 
 .nav-item {
-	font-size: 20px;
-	margin: 5px 0;
-}
-
-/* 検索欄の大きさと文字サイズ */
-form.d-flex .form-control {
-	font-size: 20x; /* 入力文字サイズ */
-	padding: 12px 16px; /* 高さを出す */
-	height: auto;
-}
-
-/* placeholder の文字サイズ */
-form.d-flex .form-control::placeholder {
-	font-size: 20px;
-}
-
-/* 検索ボタンのサイズと文字 */
-form.d-flex .btn {
-	font-size: 20px; /* ボタンの文字サイズ */
-	padding: 12px 20px; /* 高さ・幅を調整 */
+	font-size: 15px;
+	margin: 0 10px;
 }
