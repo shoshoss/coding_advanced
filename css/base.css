@@ -134,10 +134,12 @@ main {
 }
 
 /* 取り組みのご案内部分 */
-.container {
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 100px 80px;
+@media (min-width: 768px) {
+	.container {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 100px 80px;
+	}
 }
 
 h2 {
@@ -166,6 +168,10 @@ h3.section-title::before {
 	height: 0;
 	overflow: hidden;
 	transition: height 0.4s ease;
+}
+
+.responsive-toggle > li {
+	padding: 10px 5px 15px;
 }
 
 footer {
