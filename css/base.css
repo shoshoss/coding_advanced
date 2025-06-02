@@ -282,6 +282,51 @@ h3.section-title::before {
 	}
 }
 
+/* 店舗一覧 */
+/* 全体のラッパー */
+.store-list-wrapper {
+	margin: 2rem 0;
+}
+
+/* グリッドレイアウト */
+.section-heading,
+.store-list {
+	display: none; /* スマホでは非表示 */
+}
+
+/* PC・タブレットでは表示して4列に */
+@media screen and (min-width: 768px) {
+	.section-heading {
+		display: block;
+		font-size: 24px;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+	.store-list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+	}
+
+	.store-item {
+		text-align: center;
+	}
+
+	.store-item img {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 50%; /* 丸くする */
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.store-item p {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+		color: #333;
+	}
+}
+
 /* フッター部分 */
 footer {
 	background-color: darkgray;
