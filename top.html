@@ -10,6 +10,10 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(function () {});
+		</script>
 		<title>ホームページ</title>
 	</head>
 	<body>
@@ -62,51 +66,47 @@
 			<div>
 				<div>
 					<h3 class="section-title">衛星面に関して</h3>
-					<div>
-						<ul>
-							<li>・マスクを着用しての接客</li>
-							<li>・出勤前の検温の徹底</li>
-							<li>
-								・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置
-							</li>
-							<li>・より頻度の高い手洗いの励行</li>
-							<li>・テーブルにお客様用の消毒用アルコールの設置</li>
-							<li>・従業員間の距離確保のため、休憩や研修時の客席利用</li>
-						</ul>
-					</div>
+					<ul class="responsive-toggle">
+						<li>・マスクを着用しての接客</li>
+						<li>・出勤前の検温の徹底</li>
+						<li>
+							・レジカウンターやドリンク受け渡し口等への飛沫防止ガードの設置
+						</li>
+						<li>・より頻度の高い手洗いの励行</li>
+						<li>・テーブルにお客様用の消毒用アルコールの設置</li>
+						<li>・従業員間の距離確保のため、休憩や研修時の客席利用</li>
+					</ul>
 				</div>
 				<div>
 					<h3 class="section-title">お客様へのご協力のお願い</h3>
-					<div>
-						<ul>
-							<li>・店内では、飲食時以外のマスク着用をお願いいたします</li>
-							<li>・入店時の手指の消毒にご協力ください</li>
-							<li>
-								・レジに並ぶ際に、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください
-							</li>
-							<li>
-								・多数でお越しの際は、お1人がまとめてご注文願います（混雑時に入場制限をする場合がございます）
-							</li>
-							<li>・発熱や体調不良の際はご入店をお控えください</li>
-						</ul>
-					</div>
+
+					<ul class="responsive-toggle">
+						<li>・店内では、飲食時以外のマスク着用をお願いいたします</li>
+						<li>・入店時の手指の消毒にご協力ください</li>
+						<li>
+							・レジに並ぶ際に、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください
+						</li>
+						<li>
+							・多数でお越しの際は、お1人がまとめてご注文願います（混雑時に入場制限をする場合がございます）
+						</li>
+						<li>・発熱や体調不良の際はご入店をお控えください</li>
+					</ul>
 				</div>
 				<div>
 					<h3 class="section-title">サービスに関して</h3>
-					<div>
-						<ul>
-							<li>・直接お渡しする商品の提供、金銭授与時にグローブの着用</li>
-							<li>・ドリンクやフードのサンプリング中止</li>
-							<li>・地域活動・イベント中止</li>
-							<li>・混雑時間帯の客席の譲り合いへのご協力お願いの実施</li>
-							<li>
-								・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ
-							</li>
-							<li>
-								・混雑状況に応じたドライブスルーサービスの一時休止や店内客席利用の制限
-							</li>
-						</ul>
-					</div>
+
+					<ul class="responsive-toggle">
+						<li>・直接お渡しする商品の提供、金銭授与時にグローブの着用</li>
+						<li>・ドリンクやフードのサンプリング中止</li>
+						<li>・地域活動・イベント中止</li>
+						<li>・混雑時間帯の客席の譲り合いへのご協力お願いの実施</li>
+						<li>
+							・店内設置しているミルク、はちみつ、パウダー類の一時引き下げ
+						</li>
+						<li>
+							・混雑状況に応じたドライブスルーサービスの一時休止や店内客席利用の制限
+						</li>
+					</ul>
 				</div>
 			</div>
 		</main>
@@ -123,5 +123,47 @@
 			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 			crossorigin="anonymous"
 		></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				function bindToggle() {
+					const titles = document.querySelectorAll(".section-title");
+					const uls = document.querySelectorAll(".responsive-toggle");
+
+					if (window.innerWidth < 768) {
+						uls.forEach((ul) => {
+							ul.style.height = "0px";
+							ul.classList.remove("open");
+						});
+
+						titles.forEach((title) => {
+							title.removeEventListener("click", handleClick);
+							title.addEventListener("click", handleClick);
+						});
+					} else {
+						uls.forEach((ul) => {
+							ul.style.height = "auto";
+							ul.classList.add("open");
+						});
+
+						titles.forEach((title) => {
+							title.removeEventListener("click", handleClick);
+						});
+					}
+				}
+
+				function handleClick(e) {
+					const ul = e.target.nextElementSibling;
+					ul.classList.toggle("open");
+					if (ul.classList.contains("open")) {
+						ul.style.height = ul.scrollHeight + "px";
+					} else {
+						ul.style.height = "0px";
+					}
+				}
+
+				bindToggle();
+				window.addEventListener("resize", bindToggle);
+			});
+		</script>
 	</body>
 </html>
