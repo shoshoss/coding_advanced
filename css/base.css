@@ -70,6 +70,9 @@ body {
 	box-sizing: border-box;
 }
 
+nav.navbar.navbar-expand-md.bg-body-tertiary {
+	padding: 0;
+}
 nav .container-fluid {
 	background-color: lightgray;
 	margin: 0;
@@ -106,6 +109,10 @@ nav .container-fluid {
 .nav-item {
 	font-size: 15px;
 	margin: 0 10px;
+}
+
+main {
+	background-color: #ffefd5;
 }
 
 h3.section-title::before {
