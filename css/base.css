@@ -126,10 +126,8 @@ h3.section-title::before {
 	border-radius: 20%; /* 四角。丸にしたい場合は 50% */
 }
 
-@media (max-width: 767.98px) {
-	.responsive-toggle {
-		height: 0;
-		overflow: hidden;
-		transition: height 0.4s ease;
-	}
+.responsive-toggle {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.4s ease;
 }
