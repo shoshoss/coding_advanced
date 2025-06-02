@@ -16,6 +16,10 @@
 			rel="stylesheet"
 			href="https://unpkg.com/swiper/swiper-bundle.min.css"
 		/>
+
+		<!-- スクロール -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
 		<title>ホームページ</title>
 	</head>
 	<body>
@@ -140,7 +144,7 @@
 					</div>
 				</div>
 
-				<div class="food-section">
+				<div class="food-section" data-aos="zoom-in">
 					<p class="section-heading">Signature Food</p>
 					<div class="food-content">
 						<img
@@ -154,7 +158,7 @@
 					</div>
 				</div>
 
-				<div class="food-section">
+				<div class="food-section" data-aos="zoom-in">
 					<p class="section-heading">Our Coffee</p>
 					<div class="food-content">
 						<img class="uniform-image" src="/img/barista.jpg" alt="Barista" />
@@ -164,7 +168,7 @@
 					</div>
 				</div>
 
-				<div class="food-section">
+				<div class="food-section" data-aos="zoom-in">
 					<p class="section-heading">Our Food</p>
 					<div class="food-content">
 						<img class="uniform-image" src="/img/food3.jpg" alt="Our Food" />
@@ -189,6 +193,8 @@
 		></script>
 		<!-- Swiper JS -->
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<!-- スクロール -->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
@@ -243,6 +249,9 @@
 					});
 				});
 			});
+		</script>
+		<script>
+			AOS.init();
 		</script>
 	</body>
 </html>
