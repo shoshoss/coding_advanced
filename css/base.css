@@ -113,13 +113,32 @@ nav .container-fluid {
 
 main {
 	background-color: #ffefd5;
+	width: 100%;
+	margin: 0 auto; /* 左右中央配置 */
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 100px 80px;
+}
+
+h2 {
+	font-size: 32px;
+	padding: 5px 0;
+}
+h3 {
+	font-size: 24px;
+	background-color: #ffc7af;
+	margin-bottom: 2px;
+	padding: 10px;
 }
 
 h3.section-title::before {
 	content: "";
 	display: inline-block;
-	width: 10px;
-	height: 10px;
+	width: 18px;
+	height: 18px;
 	background-color: #000;
 	margin-right: 4px;
 	text-align: center;
