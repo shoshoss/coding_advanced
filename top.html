@@ -243,63 +243,6 @@
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		<!-- スクロール -->
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const swiper = new Swiper(".swiper", {
-					// 基本的な設定
-					loop: true, // ループさせる
-					pagination: {
-						el: ".swiper-pagination", // ページネーションの要素
-						clickable: true, // クリック可能にする
-					},
-					navigation: {
-						nextEl: ".swiper-button-next", // 次へボタン
-						prevEl: ".swiper-button-prev", // 前へボタン
-					},
-					breakpoints: {
-						// 画面幅 0px 以上（=スマホ）では 1枚表示
-						0: {
-							slidesPerView: 1,
-							spaceBetween: 10,
-						},
-						// 画面幅 768px 以上（=タブレット・PC）では 2枚表示
-						768: {
-							slidesPerView: 2,
-							spaceBetween: 20,
-						},
-					},
-				});
-			});
-		</script>
-
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const titles = document.querySelectorAll(".section-title");
-				const uls = document.querySelectorAll(".responsive-toggle");
-
-				// 初期状態：すべて閉じる
-				uls.forEach((ul) => {
-					ul.style.height = "0px";
-					ul.classList.remove("open");
-				});
-
-				titles.forEach((title) => {
-					title.addEventListener("click", function (e) {
-						const ul = e.target.nextElementSibling;
-
-						ul.classList.toggle("open");
-						if (ul.classList.contains("open")) {
-							ul.style.height = ul.scrollHeight + "px";
-						} else {
-							ul.style.height = "0px";
-						}
-					});
-				});
-			});
-		</script>
-		<script>
-			AOS.init();
-		</script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
