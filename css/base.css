@@ -107,3 +107,14 @@ nav .container-fluid {
 	font-size: 15px;
 	margin: 0 10px;
 }
+
+h3.section-title::before {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #000;
+	margin-right: 4px;
+	text-align: center;
+	border-radius: 20%; /* 四角。丸にしたい場合は 50% */
+}
