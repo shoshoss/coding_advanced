@@ -1,7 +1,26 @@
 @charset "UTF-8";
 /* reset */
-body, h1, h2, h3, h4, h5, h6, p, address,
-ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+img,
+form,
+table,
+tr,
+th,
+td {
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -13,17 +32,34 @@ ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
 	border-collapse: collapse;
 }
 
-textarea { font-size: 100%; vertical-align:middle;}
-img { border-style: none; display: block; }
-hr { display: none; }
-em{font-style: normal}
-input{line-height:auto;vertical-align:middle;}
-strong.more{color:#c30}
-a{text-decoration: none;}
-
+textarea {
+	font-size: 100%;
+	vertical-align: middle;
+}
+img {
+	border-style: none;
+	display: block;
+}
+hr {
+	display: none;
+}
+em {
+	font-style: normal;
+}
+input {
+	line-height: auto;
+	vertical-align: middle;
+}
+strong.more {
+	color: #c30;
+}
+a {
+	text-decoration: none;
+}
 
 body {
-	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+		Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 }
 
 * {
@@ -32,4 +68,279 @@ body {
 	-o-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+/* ナビゲーション */
+nav.navbar.navbar-expand-md.bg-body-tertiary {
+	padding: 0;
+}
+nav .container-fluid {
+	background-color: lightgray;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 768px) {
+	nav .container-fluid {
+		padding: 0 45px;
+	}
+}
+.navbar-brand {
+	font-size: max(2.3vw, 25px);
+	font-weight: bold;
+	color: #333;
+	margin: 0 2px;
+}
+
+#navbarSupportedContent {
+	background-color: lightgray;
+	margin: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] {
+	outline: none;
+	box-shadow: none;
+	border: 2px solid orange;
+}
+.navbar-toggler[aria-expanded="false"] {
+	outline: none;
+	box-shadow: none;
+}
+
+.nav-item {
+	font-size: 15px;
+	margin: 0 10px;
+}
+
+/* Swiper */
+.swiper {
+	width: 100%;
+	height: 500px;
+}
+
+.fit-picture {
+	height: 100%;
+	width: auto;
+	object-fit: contain;
+	padding-bottom: 10px;
+	margin: 0 auto;
+}
+
+/* メイン */
+main {
+	background-color: #ffefd5;
+	width: 100%;
+	margin: 0 auto; /* 左右中央配置 */
+	padding-bottom: 10px;
+}
+
+/* 取り組みのご案内部分 */
+@media (min-width: 768px) {
+	.container {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 100px 80px;
+	}
+}
+
+h2 {
+	font-size: 32px;
+	padding: 5px 0;
+}
+h3 {
+	font-size: 24px;
+	background-color: #ffc7af;
+	margin-bottom: 2px;
+	padding: 10px;
+}
+
+h3.section-title::before {
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background-color: #000;
+	margin-right: 4px;
+	text-align: center;
+	border-radius: 20%; /* 四角。丸にしたい場合は 50% */
+}
+
+.responsive-toggle {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.4s ease;
+}
+
+.responsive-toggle > li {
+	padding: 10px 5px 15px;
+}
+
+/* フード部分 */
+.food-section {
+	margin: 40px 0;
+}
+
+.section-heading {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* フードコンテンツのレイアウト */
+.food-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+/* PC画面で2列 */
+@media (min-width: 992px) {
+	.food-content {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+}
+
+.uniform-image {
+	width: 100%;
+	max-width: 400px;
+	aspect-ratio: 5 / 3;
+	object-fit: cover;
+}
+
+.food-text {
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+@media (min-width: 992px) {
+	.food-text {
+		padding-top: 20px;
+	}
+}
+
+/* 問い合わせ部分 */
+.contact-info {
+	display: flex;
+	flex-direction: column; /* スマホは縦並び */
+	gap: 1.5rem;
+	align-items: center;
+	margin: 2rem 0;
+	padding: 1rem;
+	background-color: black;
+}
+
+.contact-text {
+	max-width: 600px;
+	text-align: center;
+}
+
+.contact-text h3 {
+	margin-bottom: 0.5rem;
+	color: white;
+	background-color: black;
+	font-size: 25px;
+}
+
+.contact-text p {
+	margin: 0.3rem 0;
+	color: white;
+	font-size: 1rem;
+	line-height: 1.4;
+}
+
+.contact-image img {
+	width: 100%;
+	object-fit: cover;
+}
+
+/* PC（768px以上）で横並びに */
+@media screen and (min-width: 768px) {
+	.contact-info {
+		flex-direction: row; /* 横並び */
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	.contact-text {
+		flex: 1;
+		max-width: none;
+		padding-right: 2rem;
+	}
+
+	.contact-image {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.contact-image img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* 店舗一覧 */
+/* 全体のラッパー */
+.store-list-wrapper {
+	margin: 2rem 0;
+}
+
+/* グリッドレイアウト */
+.section-heading,
+.store-list {
+	display: none; /* スマホでは非表示 */
+}
+
+/* PC・タブレットでは表示して4列に */
+@media screen and (min-width: 768px) {
+	.section-heading {
+		display: block;
+		font-size: 24px;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+	.store-list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+	}
+
+	.store-item {
+		text-align: center;
+	}
+
+	.store-item img {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 50%; /* 丸くする */
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.store-item p {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+		color: #333;
+	}
+}
+
+/* フッター部分 */
+footer {
+	background-color: darkgray;
+}
+
+.footer-container {
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.footer-container > p {
+	margin: 0 10px;
+	font-size: 14px;
 }
